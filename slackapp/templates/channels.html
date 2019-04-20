@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Channels List{% endblock %}
+{% block content %}
+    <div class="container">
+      <h1>Channels List</h1>
+      <p>
+      <ul class="list-group"> {% for channel in channels %}
+        <li class="list-group-item">
+          {{channel.title}}
+        </li>
+         {% endfor %}
+      </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+<div class="container">
+	<h1>Username: {{profile.username}}</h1>
+	<div class="form-group container">
+		<h1> Please upload your profile PIC! </h1>
+		<form class="form-group" method="POST" enctype="multipart/form-data">
+   			{% csrf_token %}
+   			<label> Bio </label>
+   			<input class="form-control" type="text" name="bio"><br>
+    		<input class="form-control" type="file" name="profile_pic"><br>
+    		<button class="btn btn-primary" type="submit">Add</button>
+  		</form>
+	</div>
+</div>
+
+<!-- <h1> Upload image: </h1>
+<form method="POST" enctype="multipart/form-data">
+	{% csrf_token %} -->
+<!-- 
+view:
+if request.method == 'POST':
+	if request.FILES['profile.pic']:
+		profile_pic = request.FILES['profile_pic']
+		fs = FileSystemStorage(location='media/images', base_url='m/edia/images')
+		filename = fs.save(profile_pic.name, profile_pic)
+		uploaded_file_url = fs.url(filename)
+		author.pic = uploaded_file_url
+		author.save()
+		
+
+	(from django.core.files.storage impor FileSystemStorage) -->
+<!-- </form> -->
+{% endblock %}

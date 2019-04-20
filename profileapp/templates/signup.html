@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Signup{% endblock %}
+{% block content %}
+		<div class="form-group container">
+			<h1>Signup</h1>
+			<form method="POST" action="{% url 'signup' %}">
+				{% csrf_token %}
+				<label>Username:</label><br>
+				<input class="form-control" type="text" name="username"><br>
+				<label>Password:</label><br>
+				<input class="form-control" type="password" name="password"><br>
+				<label>Bio:</label><br>
+				<input class="form-control" type="textarea" name="bio"><br>
+				<button class="btn btn-primary" type="submit"> Sign up </button>
+			</form>
+		</div>
+{% endblock %}
