@@ -16,7 +16,7 @@ class Channel(models.Model):
 class Message(models.Model):
 	profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
 	profile_dest = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='destination', blank=True, null=True)
-	channel = models.ForeignKey(Channel, on_delete=models.CASCADE)
+	channel = models.ForeignKey(Channel, on_delete=models.CASCADE, blank=True, null=True)
 	pub_date = models.DateTimeField('date published', default=None)
 	text = models.TextField()
 	img = models.ImageField(upload_to='media/images/', blank=True, null=True)

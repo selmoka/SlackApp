@@ -45,6 +45,9 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'addprofile' %}">Add Profile</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'userlist' %}">Users List</a>
+            </li>
             {% if not request.user.is_authenticated %}
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'signin' %}">Signin</a>
