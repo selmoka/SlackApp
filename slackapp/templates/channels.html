@@ -6,7 +6,7 @@
       <p>
       <ul class="list-group"> {% for channel in channels %}
         <li class="list-group-item">
-          {{channel.title}}
+          <a href="{% url 'channeldetail' channel.id %}"> {{channel.title}} </a>
         </li>
          {% endfor %}
       </ul>
