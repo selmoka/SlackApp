@@ -14,9 +14,9 @@ from django.contrib.auth.models import User
 
 if __name__ == '__main__':
 	print('Starting to populate...')
-	Channel.objects.all().delete()
-	Message.objects.all().delete()
 	Profile.objects.all().delete()
+	Message.objects.all().delete()
+	Channel.objects.all().delete()
 
 	fake = Faker()
 	for _ in range(1,50):

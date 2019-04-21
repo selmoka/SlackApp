@@ -6,7 +6,21 @@
       <p>
       <ul class="list-group"> {% for channel in channels %}
         <li class="list-group-item">
-          <a href="{% url 'channeldetail' channel.id %}"> {{channel.title}} </a>
+          <div class="container">
+            <a href="{% url 'channeldetail' channel.id %}">  {{channel.title}} </a>
+            <form method="POST" action="{% url 'joinchannel' channel.id %}">
+              {% csrf_token %}
+              <button class="btn btn-primary btn-sm">Join Channel</button>
+            </form>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <h5>Participants:</h5>
+                {% for profile in channel.profile_part.all %}
+                {{ profile.user.username }}
+                {% endfor %}
+              </li>
+            </ul>
+          </div>
         </li>
          {% endfor %}
       </ul>
