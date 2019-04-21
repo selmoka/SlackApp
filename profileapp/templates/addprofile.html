@@ -2,7 +2,7 @@
 {% block title %}Profile{% endblock %}
 {% block content %}
 <div class="container">
-	<h1>Username: {{profile.username}}</h1>
+	<h1>Username: {{request.user.username}}</h1>
 	<div class="form-group container">
 		<h1> Please upload your profile PIC! </h1>
 		<form class="form-group" method="POST" enctype="multipart/form-data">

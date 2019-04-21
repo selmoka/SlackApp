@@ -1,14 +1,28 @@
 {% extends 'base.html' %}
 {% block title %}Channel Detail{% endblock %}
 {% block content %}
-    <div class="container">
+   <div class="container">
       <h1>Channel Detail</h1>
-      <p>
-<!--       <ul class="list-group"> {% for channel in channels %}
-        <li class="list-group-item">
-          <a href={% url 'channeldetail' channel.id %} {{channel.title} </a>}
-        </li>
+    <div class="form-group container">
+      <p>Title: {{channel.title}}
+      <p>Description: {{channel.description}}
+        <form method="POST"  enctype="multipart/form-data" action="{% url 'addmessage' channel.id %}">
+              {% csrf_token %}
+              <label>Message:</label>
+              <input class="form-control" type="textarea" name="text"><br>
+               <label>Image:</label>
+              <input class="form-control" type="file" name="img"><br>
+              <button class="btn btn-primary btn-sm">Add message</button>
+        </form>
+    <ul class="list-group">
+    {% for message in messages %}
+      <li class="list-group-item">
+        {{message}}
+        {% if message.img %}
+          <img src={{ message.img }} />
+        {% endif %}
+      </li>
          {% endfor %}
-      </ul> -->
+      </ul>
     </div>
 {% endblock %}

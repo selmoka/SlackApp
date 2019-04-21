@@ -17,4 +17,4 @@ class Message(models.Model):
 	text = models.TextField()
 	img = models.ImageField(upload_to='media/images/', blank=True, null=True)
 	def __str__(self):
-	 	return self.profile.user.username + ' - ' + self.channel.title
+	 	return str(self.pub_date) + ' - ' + self.profile.user.username + ' - ' + self.text

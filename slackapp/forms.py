@@ -11,3 +11,10 @@ class ChannelForm(forms.ModelForm):
     class Meta:
     	model = Channel
     	fields = ['title', 'description']
+
+# class MessageForm(forms.ModelForm):
+#     text = forms.CharField(help_text="Enter the message text") 
+#     img = forms.FileField(help_text="Upload an image")
+#     class Meta:
+#     	model = Message
+#     	fields = ['text', 'img']
